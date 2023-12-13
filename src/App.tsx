@@ -3,7 +3,6 @@ import { createGlobalStyle } from "styled-components";
 import Inputs from "./inputs";
 import CardDetails from "./cardDetails";
 import { useState } from "react";
-import backgroundColorDesk from "./assets/bg-main-desktop.png";
 
 function App() {
   const [page, setPage] = useState<number>(0);
