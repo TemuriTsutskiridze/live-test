@@ -1,13 +1,36 @@
 import styled from "styled-components";
 import IconComplete from "./assets/icon-complete.svg";
-function CardDetails() {
+function CardDetails(props: {
+  page: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  name: string;
+  setName: React.Dispatch<React.SetStateAction<string>>;
+  number: string;
+  setNumber: React.Dispatch<React.SetStateAction<string>>;
+  month: string;
+  setMonth: React.Dispatch<React.SetStateAction<string>>;
+  year: string;
+  setYear: React.Dispatch<React.SetStateAction<string>>;
+  zipCode: string;
+  setZipCode: React.Dispatch<React.SetStateAction<string>>;
+}) {
+  const continiue = () => {
+    if (props.page === 1) {
+      props.setPage(0);
+      props.setYear("");
+      props.setMonth("");
+      props.setName("");
+      props.setNumber("");
+      props.setZipCode("");
+    }
+  };
   return (
     <Footer>
       <CompleteImg src={IconComplete} />
       <Thank>THANK YOU!</Thank>
       <AddedDetails>We’ve added your card details</AddedDetails>
       <ContinueBtn>
-        <ContinueText>Continue</ContinueText>
+        <ContinueText onClick={continiue}>Continue</ContinueText>
       </ContinueBtn>
     </Footer>
   );
