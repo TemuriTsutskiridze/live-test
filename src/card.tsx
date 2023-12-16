@@ -160,6 +160,10 @@ const CardNumber = styled.span`
 const NameAndDate = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 245px;
+  @media screen and (min-width: 1440px) {
+    width: 383px;
+  }
 `;
 const Name = styled.p`
   color: var(--White, #fff);

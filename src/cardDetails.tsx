@@ -14,7 +14,7 @@ function CardDetails(props: {
   zipCode: string;
   setZipCode: React.Dispatch<React.SetStateAction<string>>;
 }) {
-  const continiue = () => {
+  const Continue = () => {
     if (props.page === 1) {
       props.setPage(0);
       props.setYear("");
@@ -30,7 +30,7 @@ function CardDetails(props: {
       <Thank>THANK YOU!</Thank>
       <AddedDetails>We’ve added your card details</AddedDetails>
       <ContinueBtn>
-        <ContinueText onClick={continiue}>Continue</ContinueText>
+        <ContinueText onClick={Continue}>Continue</ContinueText>
       </ContinueBtn>
     </Footer>
   );
@@ -42,6 +42,10 @@ const Footer = styled.footer`
   flex-direction: column;
   align-items: center;
   padding: 91px 24px 82px 24px;
+  @media screen and (min-width: 1440px) {
+    padding: 0 0 111px 40px;
+    align-self: center;
+  }
 `;
 const CompleteImg = styled.img`
   width: 80px;
@@ -66,6 +70,10 @@ const ContinueBtn = styled.button`
   width: 327px;
   height: 53px;
   margin-top: 48px;
+  @media screen and (min-width: 1440px) {
+    width: 381px;
+    cursor: pointer;
+  }
 `;
 const ContinueText = styled.p`
   color: var(--White, #fff);

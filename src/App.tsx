@@ -1,9 +1,8 @@
 import Card from "./card";
-import { createGlobalStyle } from "styled-components";
 import Inputs from "./inputs";
 import CardDetails from "./cardDetails";
 import { useState } from "react";
-
+import GlobalStyle from "./globalStyle";
 function App() {
   const [page, setPage] = useState<number>(0);
   const [name, setName] = useState<string>("");
@@ -11,7 +10,7 @@ function App() {
   const [month, setMonth] = useState<string>("");
   const [year, setYear] = useState<string>("");
   const [zipCode, setZipCode] = useState<string>("");
-  console.log(page);
+  const [searchActive, setSearchAcitive] = useState<boolean>(false);
   return (
     <>
       <GlobalStyle />
@@ -41,6 +40,8 @@ function App() {
           setYear={setYear}
           zipCode={zipCode}
           setZipCode={setZipCode}
+          searchActive={searchActive}
+          setSearchAcitive={setSearchAcitive}
         />
       ) : (
         <CardDetails
@@ -63,25 +64,3 @@ function App() {
 }
 
 export default App;
-const GlobalStyle = createGlobalStyle`
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  border: none;
-}
-body{
-  font-family: "Space Grotesk";
-  display: flex;
-  flex-direction: column;
-
-  
-}
-@media screen and (min-width:1440px){
-#root{
-  display: flex;
-    height: 100vh;
-    gap: 349px;
-}
-}
-`;
