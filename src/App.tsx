@@ -1,8 +1,8 @@
-import Card from "./Card";
-import Inputs from "./Inputs";
-import CardDetails from "./CardDetails";
+import Card from "./Card.tsx";
+import Inputs from "./Inputs.tsx";
+import CardDetails from "./CardDetails.tsx";
 import { useState } from "react";
-import GlobalStyle from "./GlobalStyle";
+import GlobalStyle from "./GlobalStyle.tsx";
 function App() {
   const [page, setPage] = useState<number>(0);
   const [name, setName] = useState<string>("");
